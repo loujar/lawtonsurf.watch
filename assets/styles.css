@@ -32,11 +32,11 @@ html, body
 }
 
 .video-container {
-    border: solid;
+    border-style: solid;
     border-color: white;
     border-radius: 40px;
     border-width: 12px;
-    overflow: hidden
+    overflow: hidden;   
 }
 
 video {
