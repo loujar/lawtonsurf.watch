@@ -3,6 +3,8 @@
 	<head>
 		<link rel="stylesheet" href="assets/styles.css">
 		<link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+		<link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+		<scropt async src="https://unpkg.com/browse/@videojs/http-streaming@1.13.4/dist/videojs-http-streaming.js"></scropt>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177231595-1"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -15,11 +17,28 @@
 	</head>
 	<body>
 		<div class="row-container">
-			<div class="content-logo">
+			<div class="logo-container">
 				<img class="content-logo-img" src="assets/logo.png" alt="Lawton Surf Cam"/>
 			</div>
-			<div class="content-video">
-				<iframe src="https://streaming.lawtonsurf.watch:5443/LiveApp/play.html?name=930413474974168166733316" frameborder="0" allowfullscreen></iframe>
+			<div class="video-container">
+				<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+				<video-js id=surf-stream class="vjs-default-skin vjs-big-play-centered" controls>
+				  <source
+				     src="https://streaming.lawtonsurf.watch:5443/LiveApp/streams/930413474974168166733316.m3u8"
+				     type="application/x-mpegURL">
+				</video-js>
+				<script src="video.js"></script>
+				<script src="videojs-http-streaming.js"></script>
+				<script>
+					var player = videojs('surf-stream', {
+						aspectRatio: '16:9', 
+						poster: 'assets/poster.jpg',
+						controlBar: {
+							volumePanel: false
+						}
+					});
+					player.play();
+				</script>
 			</div>
 		</div>
 	</body>
