@@ -39,9 +39,21 @@ html, body
     border-color: white;
     border-radius: 40px;
     border-width: 12px;
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 video {
     outline: none;
+}
+
+.link-container {
+    padding-top: 3%;
+    text-align: right;
+    
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+    font-size: 500%;
 }
